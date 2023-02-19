@@ -1,7 +1,6 @@
 //Packages needed for an application
 const fs = require("fs");
 const inquirer = require("inquirer");
-const generateMarkdown = require("./utils/generateMarkdown");
 
 // array of questions for user
 const questions = [
@@ -168,7 +167,7 @@ const questions = [
         type: 'list',
         name: 'licenses',
         message: 'Choose the license you would like to include to your project:',
-        choices: ['MIT', 'ISC', 'Mozilla', 'IBM', 'Eclipse'],
+        choices: ['MIT', 'Apache 2.0', 'Mozilla', 'IBM', 'Exlipse'],
         when: ({ confirmLicense }) => {
             if (confirmLicense) {
                 return true;
@@ -180,14 +179,80 @@ const questions = [
 
 ];
 
-// function to write README file
-function writeToFile(fileName, data) {
-}
-
 // function to initialize program
 function init() {
-
-}
+    inquirer
+        .prompt(questions)
+        .then((answers) => {
+            const readMeFile = generateMarkdown(answers);
+            fs.writeFile('generated-README.md', readMeFile, err =>
+                err ? console.error(err) : console.log('All done, your README file is ready!'))
+        })
+};
 
 // function call to initialize program
 init();
+
+// render licence badge
+function renderLicense(license) {
+    if (!license) {
+        return ``;
+    } if (license === 'MIT') {
+        return '[![License:MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)'
+    } if (license === 'Apache 2.0') {
+        return '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)'
+    } if (license === 'Mozilla') {
+        return '[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)'
+    } if (license === 'IBM') {
+        return '[![License: IPL 1.0](https://img.shields.io/badge/License-IPL_1.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)'
+    } if (license === 'Exlipse') {
+        return '[![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)](https://opensource.org/licenses/EPL-1.0)'
+    }
+};
+
+// function to generate readme file
+function generateMarkdown(data) {
+    return `
+# ${data.project} 
+
+ ${renderLicense(data.licenses)}
+
+## Table of Contents
+  * [Description](#description)
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [Contributing](#contributing)
+  * [Testing](#testing)
+  * [Contact](#contact)
+  * [License](#license)
+  * [Credits](#credits)
+
+## Description
+${data.description}
+
+## Installation
+${data.installation}
+
+## Usage
+${data.usage}
+
+## Contributing
+${data.contributing}
+
+## Testing
+${data.testing}
+
+## Contact
+${data.contact} </br>
+[Email](mailto:${data.email}) </br>
+[GitHub](https://github.com/${data.github}) 
+
+## License
+${data.licenses}
+
+## Author
+${data.name}
+
+  
+  `;
+};
