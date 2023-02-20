@@ -1,7 +1,7 @@
 
-# README Generator Node.js 
+# project name 
 
- [![License:MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+ [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 ## Table of Contents
   * [Description](#description)
@@ -14,31 +14,31 @@
   * [Credits](#credits)
 
 ## Description
-This project is a command line interface application that creates a README file for your application repositories with particular attention to the professional form of README file. This application allows you to quickly and easily generate 
+project description sample
 
 ## Installation
-To install this app you will need to run npm install for the following dependencies in your CLI, inquirer, fs, and util. This will allow the question prompts from the CLI for you to create your README.md.
+installation instructions
 
 ## Usage
-Run the command node index.js in the CLI and the inquirer package will begin prompts for your README section information. As you answer each question you dynamically form the sections, and table of contents for your README.
+usage instructions
 
 ## Contributing
 This project will not be accepting any contribution from third parties. Thank you for your interest. If you have any questions regarding project, [contact me](#contact)!
       
 
 ## Testing
-n/a
+testing description sample
 
 ## Contact
-If you have any questions or comments regarding this project, please contact me via email. </br>
-[Email](mailto:mrs.anna.noga@gmail.com) </br>
-[GitHub](https://github.com/mrsannanoga) 
+instruction sample </br>
+[Email](mailto:email address) </br>
+[GitHub](https://github.com/github username) 
 
 ## License
-MIT
+Apache 2.0
 
 ## Author
-Anna Noga
+full name
 
   
   

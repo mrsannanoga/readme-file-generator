@@ -26,7 +26,9 @@ To install README Generator it is required to clone this repository to your loca
 ## Usage
 To generate the README file run the command node index.js in the CLI and the inquirer package will begin prompts to fill all required README sections later. All answers are automatically added to the right sections of the README file to keep it in most professional form.
 
-Watch the demo of README Generator below.
+Watch the demo of README Generator
+
+[<img src="https://i9.ytimg.com/vi_webp/Zsmg1xWwerc/mq3.webp?sqp=CIzdz58G-oaymwEmCMACELQB8quKqQMa8AEB-AG8CYAC0AWKAgwIABABGGMgYyhjMA8=&rs=AOn4CLDj0wEqOBvMlqcU-N6mdkjPJ0Jxqw" width="100%">](https://www.youtube.com/watch?v=Zsmg1xWwerc "README Generator Node.js")
 
 ## Contributing
 This project will not be accepting any contribution from third parties. Thank you for your interest. If you have any questions regarding project, [contact me](#contact)!
