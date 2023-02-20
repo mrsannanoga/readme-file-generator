@@ -31,8 +31,8 @@ testing description sample
 
 ## Contact
 instruction sample </br>
-[Email](mailto:email address) </br>
-[GitHub](https://github.com/github username) 
+[Email](mailto:mrs.anna.noga@gmail.com) </br>
+[GitHub](https://github.com/mrsannanoga) 
 
 ## License
 Apache 2.0
