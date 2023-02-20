@@ -176,6 +176,7 @@ const questions = [
             }
         }
     },
+   
 
 ];
 
@@ -196,7 +197,7 @@ init();
 // render licence badge
 function renderLicense(license) {
     if (!license) {
-        return ``;
+        return `This project is not covered under any license`;
     } if (license === 'MIT') {
         return '[![License:MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)'
     } if (license === 'Apache 2.0') {
@@ -209,6 +210,17 @@ function renderLicense(license) {
         return '[![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)](https://opensource.org/licenses/EPL-1.0)'
     }
 };
+
+// function to render contributing options and their outcome
+function renderContributing(confirmContributing, data) {
+    if (!confirmContributing) {
+      return `This project will not be accepting any contribution from third parties. Thank you for your interest. If you have any questions regarding project, [contact me](#contact)!
+      `;
+    } else {
+      return `${data} 
+      `;
+    }
+  };
 
 // function to generate readme file
 function generateMarkdown(data) {
@@ -237,7 +249,7 @@ ${data.installation}
 ${data.usage}
 
 ## Contributing
-${data.contributing}
+${renderContributing(data.confirmContributing, data.contributing)}
 
 ## Testing
 ${data.testing}
