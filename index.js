@@ -23,6 +23,7 @@ const questions = [
         type: 'input',
         name: 'name',
         message: 'Enter your full name:',
+        //check if the input is filled out, if not, message is sent
         validate: nameInput => {
             if (nameInput) {
                 return true;
@@ -184,8 +185,10 @@ const questions = [
 function init() {
     inquirer
         .prompt(questions)
+        //generate answers into markdown
         .then((answers) => {
             const readMeFile = generateMarkdown(answers);
+            //write a readme file
             fs.writeFile('generated-README.md', readMeFile, err =>
                 err ? console.error(err) : console.log('All done, your README file is ready!'))
         })
